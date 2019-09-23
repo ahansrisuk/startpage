@@ -1,6 +1,5 @@
 <template>
     <div>
-        <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
         <DateTime />
         <HelloWorld msg="Welcome to Your Vue.js App"/>
     </div>
@@ -14,7 +13,7 @@ export default {
   name: 'app',
   components: {
     HelloWorld,
-    DateTime
+    DateTime,
   },
 };
 </script>

@@ -3,7 +3,14 @@ module.exports = {
     fontFamily: {
       body: ['Roboto', 'sans-serif']
     },
-    extend: {}
+    extend: {
+      colors: {
+        tan: '#FFF8E1'
+      },
+      fontSize: {
+        '7xl': '5rem'
+      },
+    }
   },
   variants: {},
   plugins: []
