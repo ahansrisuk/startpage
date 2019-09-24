@@ -31,14 +31,21 @@ export default {
         //TODO: Pad times
         createDate: function() {
             var date = new Date();
-            this.hours = date.getHours();
-            this.minutes = date.getMinutes();
-            this.seconds = date.getSeconds();
+            this.hours = this.padTime(date.getHours());
+            this.minutes = this.padTime(date.getMinutes());
+            this.seconds = this.padTime(date.getSeconds());
             this.day = this.daysOfWeeK[date.getDay()];
             this.date = date.getDate();
             this.month = this.monthsInYear[date.getMonth()];
             this.year = date.getFullYear();
         },
+        padTime: function(time) {
+            if (time < 10) {
+                return "0" + time;
+            } else {
+                return time;
+            }
+        }
     },
     mounted: function () {
         setInterval(() => { this.createDate() }, 500);
