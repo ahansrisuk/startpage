@@ -1,6 +1,6 @@
 <template>
     <div class="container mx-auto flex h-full justify-center items-center">
-        <div class="flex">
+        <div class="flex w-2/3">
             <div>
                 <DateTime />
                 <LinkTable class="mt-10" /> 

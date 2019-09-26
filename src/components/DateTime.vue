@@ -48,6 +48,7 @@ export default {
         }
     },
     mounted: function () {
+        this.createDate();
         setInterval(() => { this.createDate() }, 500);
     }
 };
