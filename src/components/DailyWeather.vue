@@ -17,6 +17,9 @@ export default {
                 case 'clear-day' || 'clear-night':
                     return 'flaticon-016-sun';
                     break;
+                case 'cloudy':
+                    return 'flaticon-015-cloud';
+                    break;
                 case 'rain' || 'snow' || 'sleet':
                     return 'flaticon-010-raining';
                     break;
