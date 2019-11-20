@@ -14,6 +14,10 @@
 </template>
 
 <script>
+
+import calendars from '../../calendars';
+const calendarList = calendars.ids
+
 class Event {
     constructor() {
         this.id = '',
@@ -59,18 +63,16 @@ export default {
             })
         },
         getTodaysEvents: function() {
-            var calendarList = this.calendarList;
-            var params = "timeMin=2019-10-08T00:00:00-04:00&timeMax=2019-10-09T00:00:01-04:00"
+            var params = "timeMin=2019-11-20T00:00:00-04:00&timeMax=2019-11-21T00:00:01-04:00"
             var i = 1;
-            this.calendarList.forEach( calendar => {
+            calendarList.forEach( calendarId => {
                 this.$gapi.request({
                     path: 'https://www.googleapis.com/calendar/v3/calendars/' +
-                        calendar.id +
+                        calendarId +
                         '/events?' + 
                         params,
                     method: 'GET',
                 }).then(response => {
-                    console.log(response);
                     var events = response.result.items;
                     events.forEach(event => {
                         this.parseEvent(event, i)
@@ -88,6 +90,9 @@ export default {
             calEvent.start = this.parseTime(event.start);
             calEvent.end = this.parseTime(event.end);
             this.events.push(calEvent);
+            this.events.sort(function(a,b) {
+                return a.start - b.start
+            })
         },
         parseTime: function(time) {
             if (time.hasOwnProperty('dateTime')) {
@@ -99,7 +104,7 @@ export default {
     },
     mounted: function() {
         this.signIn();
-        this.getAllCalendars()
+        this.getTodaysEvents();
     }
 }
 </script>
