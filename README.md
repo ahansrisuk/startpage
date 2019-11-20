@@ -18,6 +18,10 @@ npm run build
 
 Put all three files in the same directory and open index.html in your browser.
 
+## Note
+
+You will need your own auth.js and calendars.js in the root to call external APIs.
+
 ## Built With
 
 * [Vue.js](https://vuejs.org/)
