@@ -1,3 +1,5 @@
+NOTE: I expect this to get as much attention as it did. I hope to make this more user-friendly to set up in the future. However, feel free to open a pull request with any enhancements. Thank you.
+
 # startpage
 
 Customized startpage for personal use.
